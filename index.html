@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College GPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>College GPA Calculator</h1>
+            <p>Enter your courses below to calculate your semester and cumulative GPA</p>
+        </header>
+
+        <!-- Cumulative GPA Section (Optional Feature) -->
+        <section class="card cumulative-section">
+            <h2>Previous Academic Record</h2>
+            <p class="section-desc">Include your previous GPA and credits for cumulative calculation</p>
+            <div class="prev-inputs">
+                <div class="input-group">
+                    <label for="prev-gpa">Previous GPA</label>
+                    <input type="number" id="prev-gpa" min="0" max="4" step="0.01" placeholder="e.g. 3.50">
+                </div>
+                <div class="input-group">
+                    <label for="prev-credits">Previous Credits</label>
+                    <input type="number" id="prev-credits" min="0" step="1" placeholder="e.g. 30">
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Entry Section -->
+        <section class="card courses-section">
+            <h2>Current Semester Courses</h2>
+
+            <!-- Table Header (visible on desktop) -->
+            <div class="course-header">
+                <span class="col-name">Course Name</span>
+                <span class="col-credits">Credits</span>
+                <span class="col-grade">Grade</span>
+                <span class="col-action"></span>
+            </div>
+
+            <!-- Course Rows Container -->
+            <div id="course-list">
+                <!-- Rows are added dynamically by JavaScript -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="add-course-btn" class="btn btn-add">+ Add Course</button>
+                <button id="reset-btn" class="btn btn-reset">Reset All</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="card results-section">
+            <h2>Results</h2>
+            <div class="results-grid">
+                <div class="result-item">
+                    <span class="result-label">Total Credits</span>
+                    <span class="result-value" id="total-credits">0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Total Grade Points</span>
+                    <span class="result-value" id="total-points">0.00</span>
+                </div>
+                <div class="result-item highlight">
+                    <span class="result-label">Semester GPA</span>
+                    <span class="result-value" id="semester-gpa">0.00</span>
+                </div>
+                <div class="result-item highlight cumulative">
+                    <span class="result-label">Cumulative GPA</span>
+                    <span class="result-value" id="cumulative-gpa">0.00</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>GPA is calculated on a standard 4.0 scale</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
